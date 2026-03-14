@@ -1,7 +1,5 @@
 <script>
-	import HeaderComponent from '$lib/components/HeaderComponent.svelte';
+	import SiteShell from '$lib/components/layout/SiteShell.svelte';
 </script>
 
-<header>
-	<HeaderComponent />
-</header>
+<SiteShell showHead={false} showFooter={false} />

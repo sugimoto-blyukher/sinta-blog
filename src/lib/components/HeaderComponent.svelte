@@ -2,8 +2,8 @@
 	import { gsap } from 'gsap';
 
 	const links = [
-		{ href: '#about', label: 'About me' },
-		{ href: '#timeline', label: 'タイムライン' },
+		{ href: '/', label: 'About me' },
+		{ href: '/timeline', label: 'タイムライン' },
 		{ href: '/goal.html', label: '目標' },
 		{ href: '#links', label: '関連リンク集' }
 	];
@@ -64,7 +64,7 @@
 			</button>
 		</div>
 		<ul class="space-y-6 text-2xl text-center">
-			{#each links as link}
+			{#each links as link (link.href)}
 				<li>
 					<a
 						href={link.href}
