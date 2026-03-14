@@ -1,13 +1,10 @@
-<script>
-</script>
-
 <svelte:head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<!-- Favicon -->
-	<link rel="icon" href="img/ore.jpg" type="image/jpeg" />
-	<link rel="apple-touch-icon" href="img/ore.jpg" />
+	<link rel="icon" href="/ore.jpg" type="image/jpeg" />
+	<link rel="apple-touch-icon" href="/ore.jpg" />
 
 	<!-- OGP Tags -->
 	<meta property="og:title" content="シンタのホームページ | Sugimoto Portfolio" />
@@ -17,23 +14,20 @@
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="#" />
-	<meta property="og:image" content="img/ore.jpg" />
+	<meta property="og:image" content="/ore.jpg" />
 	<meta property="og:site_name" content="Sugimotoのポートフォリオ" />
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="Sugimotoのポートフォリオ" />
 	<meta name="twitter:description" content="Sugimotoのポートフォリオ。" />
-	<meta name="twitter:image" content="img/ore.jpg" />
+	<meta name="twitter:image" content="/ore.jpg" />
 
 	<title>Sugimoto Portofolio</title>
-	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link
 		href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=DotGothic16&display=swap"
 		rel="stylesheet"
 	/>
-	<link rel="stylesheet" href="css/stylesheets.css" />
-	<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 </svelte:head>

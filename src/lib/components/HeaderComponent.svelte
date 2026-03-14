@@ -1,53 +1,52 @@
-<script>
-	document.addEventListener('DOMContentLoaded', () => {
-		const openBtn = document.getElementById('open-menu-btn');
-		const closeBtn = document.getElementById('close-menu-btn');
-		const menu = document.getElementById('slide-menu');
-		const overlay = document.getElementById('menu-overlay');
-		const menuLinks = document.querySelectorAll('.menu-link');
+<script lang="ts">
+	import { gsap } from 'gsap';
 
-		// Menu animation duration
-		const duration = 0.5;
-		const ease = 'power3.inOut';
+	const links = [
+		{ href: '#about', label: 'About me' },
+		{ href: '#timeline', label: 'タイムライン' },
+		{ href: '/goal.html', label: '目標' },
+		{ href: '#links', label: '関連リンク集' }
+	];
 
-		// Open Menu
-		const openMenu = () => {
-			gsap.to(menu, { x: 0, duration: duration, ease: ease });
-			gsap.to(overlay, { opacity: 1, pointerEvents: 'auto', duration: duration });
-		};
+	let menu: HTMLElement;
+	let overlay: HTMLElement;
 
-		// Close Menu
-		const closeMenu = () => {
-			gsap.to(menu, { x: '100%', duration: duration, ease: ease });
-			gsap.to(overlay, { opacity: 0, pointerEvents: 'none', duration: duration });
-		};
+	const duration = 0.5;
+	const ease = 'power3.inOut';
 
-		// Event Listeners
-		if (openBtn) openBtn.addEventListener('click', openMenu);
-		if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-		if (overlay) overlay.addEventListener('click', closeMenu);
+	function openMenu() {
+		gsap.to(menu, { x: 0, duration, ease });
+		gsap.to(overlay, { opacity: 1, pointerEvents: 'auto', duration });
+	}
 
-		// Close menu when clicking a link
-		menuLinks.forEach((link) => {
-			link.addEventListener('click', closeMenu);
-		});
-	});
+	function closeMenu() {
+		gsap.to(menu, { x: '100%', duration, ease });
+		gsap.to(overlay, { opacity: 0, pointerEvents: 'none', duration });
+	}
 </script>
 
 <!-- Overlay for menu -->
-<div
-	id="menu-overlay"
+<button
+	type="button"
+	bind:this={overlay}
 	class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40"
-></div>
+	onclick={closeMenu}
+	aria-label="メニューを閉じる"
+></button>
 
 <!-- Slide Menu -->
 <nav
-	id="slide-menu"
+	bind:this={menu}
 	class="fixed top-0 right-0 w-64 h-full bg-cyan-900 text-white z-50 transform translate-x-full shadow-2xl dotgothic16-regular"
 >
 	<div class="p-6 flex flex-col h-full">
 		<div class="flex justify-end mb-8">
-			<button id="close-menu-btn" class="text-white hover:text-amber-400 transition-colors">
+			<button
+				type="button"
+				class="text-white hover:text-amber-400 transition-colors"
+				onclick={closeMenu}
+				aria-label="メニューを閉じる"
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="h-8 w-8"
@@ -65,28 +64,15 @@
 			</button>
 		</div>
 		<ul class="space-y-6 text-2xl text-center">
-			<li>
-				<a href="#about" class="menu-link hover:text-amber-400 block py-2 border-b border-cyan-700"
-					>About me</a
-				>
-			</li>
-			<li>
-				<a
-					href="#timeline"
-					class="menu-link hover:text-amber-400 block py-2 border-b border-cyan-700">タイムライン</a
-				>
-			</li>
-			<li>
-				<a
-					href="goal.html"
-					class="menu-link hover:text-amber-400 block py-2 border-b border-cyan-700">目標</a
-				>
-			</li>
-			<li>
-				<a href="#links" class="menu-link hover:text-amber-400 block py-2 border-b border-cyan-700"
-					>関連リンク集</a
-				>
-			</li>
+			{#each links as link}
+				<li>
+					<a
+						href={link.href}
+						class="hover:text-amber-400 block py-2 border-b border-cyan-700"
+						onclick={closeMenu}>{link.label}</a
+					>
+				</li>
+			{/each}
 		</ul>
 	</div>
 </nav>
@@ -97,8 +83,10 @@
 	</div>
 	<!-- Hamburger Button -->
 	<button
-		id="open-menu-btn"
+		type="button"
 		class="absolute right-4 text-white hover:text-amber-400 transition-colors z-30 p-2"
+		onclick={openMenu}
+		aria-label="メニューを開く"
 	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
