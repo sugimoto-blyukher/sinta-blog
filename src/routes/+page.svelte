@@ -1,3 +1,6 @@
+<HeadComponents>
+</HeadComponents>
+
 <div>
     <HeaderComponent />
     <section class="dotgothic16-regular bg-amber-300 grid grid-cols justify-center">
@@ -6,5 +9,7 @@
 </div>
 
 <script>
+    import HeadComponents from "$lib/components/HeadComponents.svelte";
+
     import HeaderComponent from "$lib/components/HeaderComponent.svelte";
 </script>
