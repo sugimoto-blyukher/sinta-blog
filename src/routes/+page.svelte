@@ -36,6 +36,11 @@
 						</tbody>
 					</table>
 				</div>
+				<h2 class="text-4xl pt-8 font-bold scroll-mt-20">このサイトについて</h2>
+				<p>タイムライン：個人史</p>
+				<p>プロジェクト集：私が開発した/しているもの集</p>
+				<p>リンク集：xやGitHubなど私に関連したリンクを集めたページ</p>
+				<p>ブログ：私のブログであるSugimoto Gazzettaのリンク</p>
 			</div>
 		</section>
 
