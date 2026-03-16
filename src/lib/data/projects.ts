@@ -12,4 +12,10 @@ export const projects: Projects[] = [
     url: 'https://github.com/sugimoto-blyukher/sugimotos',
     tags: ['OS', 'C', 'Kernel']
   },
+  {
+    title: 'アジプロジェネレーター',
+    description: '私が作ったソ連風のアジプロ文を生成するサイトです。(今はもう使えない)',
+    url: 'null',
+    tags: ['Python', 'FastAPI', 'GeminiAPI']
+  },
 ]
