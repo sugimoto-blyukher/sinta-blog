@@ -13,7 +13,7 @@ export const links: Link[] = [
   {
     title: 'X (旧Twitter) (sugimoto(cedar root))',
     url: 'https://twitter.com/sug1m0t0_unk',
-    description: '私の大学用のXアカウントです。最新の情報や投稿を確認できます。',
+    description: '私の大学用のXアカウントです。',
   },
   {
     title: 'X (旧Twitter) (sugimoto)',
@@ -23,6 +23,6 @@ export const links: Link[] = [
   {
     title: 'sugimoto',
     url: 'https://sinta.fun',
-    description: '私のブログです。最新の情報や投稿を確認できます。',
+    description: '私の個人サイトです。',
   },
 ]
